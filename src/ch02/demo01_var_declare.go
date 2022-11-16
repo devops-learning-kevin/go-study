@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+//变量的声明
 var m = "19"
 
 func main() {
@@ -44,4 +45,8 @@ func main() {
 	fmt.Println(x, "  ", y, "  ", z)
 	x, y, z = y, z, x
 	fmt.Println(x, "  ", y, "  ", z)
+
+	var abc uint8 = 255
+	//var abc uint8 = 2000
+	fmt.Printf("%T, %v\n", abc, abc)
 }
