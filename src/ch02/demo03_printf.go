@@ -114,4 +114,8 @@ func main() {
 	arr3 := []byte{'a', 'b', 'c', 'A'}
 	fmt.Printf("%T,%x \n", arr3, arr3)
 
+	//直接打印源字符和值
+	char1 := 'a'
+	fmt.Printf("字符char1的值是 %v,字符本身是 %c", char1, char1)
+
 }
