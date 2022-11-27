@@ -35,6 +35,7 @@ func pingfang(num int) int {
 }
 
 //传入切片和方法名来过滤或者处理切片
+
 func FilterArr(arr []int, f myFunc) []int {
 	var result []int
 	for _, value := range arr {
