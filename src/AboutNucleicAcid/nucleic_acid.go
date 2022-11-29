@@ -16,21 +16,21 @@ const (
 // 定义试管颜色常量
 const (
 	PINK  = "粉色" //未经检测的试剂颜色
-	RED   = "红丝" //阳性
+	RED   = "红色" //阳性
 	GREEN = "绿色" //阴性
 )
 
-// People 定义核算样本采样对象结构体 The object of the sample collection = People
+// People 定义核酸样本采样对象结构体 The object of the sample collection = People
 type People struct {
 	name string
 	id   string
-	flag string //核酸病毒携带状态
+	flag string //病毒携带状态
 }
 
 // NucleicAcidSample 定义核酸样本结构体,10混1
 type NucleicAcidSample struct {
 	Peoples [10]*People
-	Flag    string
+	Flag    string //混管检查状态
 }
 
 func main() {
@@ -68,7 +68,7 @@ func main() {
 		fmt.Println(*v)
 	}
 	//混管检测
-	CheckFor10(nas)
+	CheckFor10(&nas)
 	fmt.Println("-----------------------混管检测结果--------------------")
 	for _, v := range nas.Peoples {
 		fmt.Println(*v)
@@ -80,21 +80,21 @@ func main() {
 		}
 	}
 
-	fmt.Println("-----------------------最终检测结果--------------------")
+	fmt.Println("-----------------------单管最终检测结果--------------------")
 	for _, v := range nas.Peoples {
 		fmt.Println(*v)
 	}
-
+	fmt.Println("-----------------------潘老师的最终检测结果--------------------")
 	fmt.Println(p9)
 
 }
 
 // CheckFor10 混管检测 10混1
-func CheckFor10(nas NucleicAcidSample) {
+func CheckFor10(nas *NucleicAcidSample) { //注意这个地方的参数一定要传指针才行
 	reagentColor := PINK //试剂的初始颜色
 	//检测结果以随机数来确定
 	randNumb := GetRand()
-	fmt.Println(randNumb)
+	//fmt.Println(randNumb)
 	switch randNumb {
 	case 1:
 		reagentColor = RED
@@ -127,7 +127,7 @@ func CheckFor10(nas NucleicAcidSample) {
 func CheckForSingle(p *People) {
 	reagentColor := PINK //试剂的初始颜色
 	randNumb := GetRand()
-	fmt.Println(randNumb)
+	//fmt.Println(randNumb)
 	switch randNumb {
 	case 1:
 		reagentColor = RED
