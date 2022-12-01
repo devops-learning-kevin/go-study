@@ -40,10 +40,10 @@ func main() {
 	p4 := People{"Zhaoliu", "110123198805123457", YIN}
 	p5 := People{"Tom", "110123198802123817", YIN}
 	p6 := People{"Alice", "110123199505123257", YIN}
-	p7 := People{"Lucy", "110123199105123187", YIN}
+	p7 := People{"曹墩墩", "110123199105123187", YIN}
 	p8 := People{"奥特曼", "11012312000512385X", YIN}
 	p9 := People{"潘老师", "110123096305123157", YIN}
-	p10 := People{"刘备", "110123021105123852", YIN}
+	p10 := People{"贾小小", "110123021105123852", YIN}
 
 	var nas NucleicAcidSample
 	nas.Flag = YIN
