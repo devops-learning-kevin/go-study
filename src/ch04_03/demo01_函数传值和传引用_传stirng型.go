@@ -18,20 +18,20 @@ func main() {
 
 	//传值
 	changeStringtVal(a)
-	fmt.Printf("2、changeIntVal调用后：变量a的内存地址：%p,值为：%v\n\n", &a, a) //abcd
+	fmt.Printf("2、changeStringVal调用后：变量a的内存地址：%p,值为：%v\n\n", &a, a) //abcd
 
 	//传引用
 	changeStringPtr(&a)
-	fmt.Printf("3、changeIntPtr调用后：变量a的内存地址：%p,值为：%v\n\n", &a, a) //ABCD
+	fmt.Printf("3、changeStringPtr调用后：变量a的内存地址：%p,值为：%v\n\n", &a, a) //ABCD
 }
 
 func changeStringtVal(a string) {
-	fmt.Printf("----------changeIntVal函数内：参数a的内存地址：%p,值为%v\n", &a, a) //abcd
+	fmt.Printf("----------changeStringVal函数内：参数a的内存地址：%p,值为%v\n", &a, a) //abcd
 	a = strings.ToUpper(a)
 }
 
 func changeStringPtr(a *string) {
-	fmt.Printf("----------changeIntPtr函数内：参数a的内存地址：%p,值为%v\n", &a, a) //地址
+	fmt.Printf("----------changeStringPtr函数内：参数a的内存地址：%p,值为%v\n", &a, a) //地址
 	*a = strings.ToUpper(*a)
 
 }

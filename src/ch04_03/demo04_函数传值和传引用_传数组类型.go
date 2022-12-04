@@ -12,25 +12,25 @@ import (
 */
 
 func main() {
-	a := true
-	fmt.Printf("1、变量a的内存地址：%p,值为：%v\n\n", &a, a) //true
+	a := [4]int{1, 2, 3, 4}
+	fmt.Printf("1、变量a的内存地址：%p,值为：%v\n\n", &a, a) //[1,2,3,4]
 
 	//传值
-	changeBoolVal(a)
-	fmt.Printf("2、changeIntVal调用后：变量a的内存地址：%p,值为：%v\n\n", &a, a) //true
+	changeArrVal(a)
+	fmt.Printf("2、changeArrVal调用后：变量a的内存地址：%p,值为：%v\n\n", &a, a) //[1,2,3,4]
 
 	//传引用
-	changeBoolPtr(&a)
-	fmt.Printf("3、changeIntPtr调用后：变量a的内存地址：%p,值为：%v\n\n", &a, a) //false
+	changeArrPtr(&a)
+	fmt.Printf("3、changeArrPtr调用后：变量a的内存地址：%p,值为：%v\n\n", &a, a) ////[1,250,3,4]
 }
 
-func changeBoolVal(a bool) {
-	fmt.Printf("----------changeIntVal函数内：参数a的内存地址：%p,值为%v\n", &a, a) //true
-	a = false
+func changeArrVal(a [4]int) {
+	fmt.Printf("----------changeArrVal函数内：参数a的内存地址：%p,值为%v\n", &a, a) // &[1,2,3,4]
+	a[0] = 90
 }
 
-func changeBoolPtr(a *bool) {
-	fmt.Printf("----------changeIntPtr函数内：参数a的内存地址：%p,值为%v\n", &a, a) //地址
-	*a = false
+func changeArrPtr(a *[4]int) {
+	fmt.Printf("----------changeArrPtr函数内：参数a的内存地址：%p,值为%v\n", &a, a) //地址
+	(*a)[1] = 250
 
 }
