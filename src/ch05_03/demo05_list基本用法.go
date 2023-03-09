@@ -51,6 +51,26 @@ func optList2() {
 	//遍历list3
 	iterateList(*list3)
 
+	//新定义list
+	temp := list.New()
+	temp.PushFront("abc")
+	temp.PushFront("xyz")
+	temp.PushBack("123")
+	temp.PushBack("ghi")
+
+	//PushFrontList
+	list3.PushFrontList(temp)
+
+	//遍历list3
+	iterateList(*list3)
+
+	//Remove
+	list3.Remove(element)
+
+	//遍历list3
+	iterateList(*list3)
+	iterateListReverse(*list3)
+
 }
 
 func printListInfo(info string, l list.List) {
@@ -59,8 +79,17 @@ func printListInfo(info string, l list.List) {
 	fmt.Println("--------------------------")
 }
 
+//顺序遍历
 func iterateList(l list.List) {
 	for e := l.Front(); e != nil; e = e.Next() {
+		fmt.Printf("%v \t", e.Value)
+	}
+	fmt.Println("\n--------------------------")
+}
+
+//逆序遍历
+func iterateListReverse(l list.List) {
+	for e := l.Back(); e != nil; e = e.Prev() {
 		fmt.Printf("%v \t", e.Value)
 	}
 	fmt.Println("\n--------------------------")

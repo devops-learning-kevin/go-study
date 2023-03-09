@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>oz blockchain demo</title>
+</head>
+<style>
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 20px;
+  }
+</style>
+<body>
+
+<p id="demo"></p>
+
+<h3 align="center">OZ Blockchain demo</h3>
+
+<div>
+
+    <input class="enableEthereumButton" type="submit" value="连接钱包">
+
+  <form action="http://localhost:9090/" method="post">
+      <label>地址: <span class="showAccount"></span></label>
+      <input type="text" id="showAccount" name="address" placeholder="address..">
+      <label>余额: <span class="showBalance"></span></label>
+      <input type="text" id="showBalance" name="balance" placeholder="balance..">
+      <label>NFT资产: <span class="showNFT"></span></label>
+      <input type="text" id="NFT" name="NFT" placeholder="NFT..">
+      <input class="enableEthereumButton" type="submit" value="保存钱包信息">
+    </form>
+
+
+</div>
+
+<div>
+  <h4 align="center">转账</h4>
+
+    <label for="toaddress">转入地址</label>
+    <input type="text" id="toaddress" name="ntoaddress" placeholder="To address..">
+
+    <label for="amount">数量</label>
+    <input type="text" id="amount" name="namount" placeholder="Amount..">
+
+
+  <input class="sendEthButton" type="submit" value="确定">
+</div>
+
+<div>
+  <h4 align="center">部署ERC721合约</h4>
+  <form action="http://localhost:9090/" method="post">
+    <label for="contractcode">合约代码</label>
+    <input type="text" id="contractcode" name="contractcode" placeholder="Contract code..">
+
+    <label for="abi">合约ABI</label>
+    <input type="text" id="abi" name="abi" placeholder="ABI..">
+
+    <input type="submit" value="确定">
+  </form>
+</div>
+
+<div>
+  <h4 align="center">铸造NFT</h4>
+  <form action="http://localhost:9090/" method="post">
+    <label for="toaddr">地址</label>
+    <input type="text" id="toaddr" name="toaddr" placeholder="To address..">
+
+    <label for="tokenid">TokenId</label>
+    <input type="text" id="tokenid" name="tokenid" placeholder="Token id..">
+
+    <input type="submit" value="确定">
+  </form>
+</div>
+<div>
+  <h4 align="center">转移NFT</h4>
+  <form action="http://localhost:9090/" method="post">
+    <label for="contracaddr">合约地址</label>
+    <input type="text" id="contracaddr" name="contracaddr" placeholder="Contract address..">
+
+    <label for="toaddr">转入地址</label>
+    <input type="text" id="tranfertoaddr" name="tranfertoaddr" placeholder="To address..">
+
+    <label for="tokenid">TokenId</label>
+    <input type="text" id="transfertokenid" name="transfertokenid" placeholder="Token id..">
+
+    <input type="submit" value="确定">
+  </form>
+</div>
+
+
+</body>
+
+<!-- <script src="./metamaskTest.js"></script> -->
+<script src="./metamaskTest.js"></script>
+</html>

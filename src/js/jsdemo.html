@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<p> typeof 操作符返回变量、对象、函数、表达式的类型。</p>
+<p id="demo"></p>
+<script>
+    let balance = ""
+    balance=100
+    balance1 = balance * 100
+    balance2 = dectoHex(balance1)
+
+    document.getElementById("demo").innerHTML =
+        typeof "john" + "<br>" +
+        typeof 3.14 + "<br>" +
+        typeof NaN + "<br>" +
+        typeof false + "<br>" +
+        typeof [1,2,3,4] + "<br>" +
+        typeof {name:'john', age:34} + "<br>" +
+        typeof new Date() + "<br>" +
+        typeof function () {} + "<br>" +
+        typeof myCar + "<br>" +
+        balance2
+        typeof null;
+
+
+    function dectoHex(n) {
+        var str = '';
+        if (n == 0) return '0';
+        while (n != 0) {
+            str = getHexString(n % 16) + str;
+            n = parseInt(n / 16);
+        }
+        return str;
+    }
+
+    function getHexString(num) {
+        switch (num) {
+            case 10: return 'A';
+            case 11: return 'B';
+            case 12: return 'C';
+            case 13: return 'D';
+            case 14: return 'E';
+            case 15: return 'F';
+            default: return num;
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

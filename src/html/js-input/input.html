@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+</head>
+<body>
+
+<input type="text" id="text1" value="Hello world!" />
+<input type="text" id="text2" value="Hello world!" />
+
+<p id="demo">点击按钮来改变input输入框的值。</p>
+
+<button onclick="myFunction()">试一下</button>
+
+<script>
+  function myFunction() {
+    document.getElementsByTagName("input")[1].value = "你好！";
+  }
+</script>
+
+</body>
+
+</html>
