@@ -22,13 +22,13 @@ module.exports = {
     polygon: {
       chainId: 137,
       url: "https://rpc.ankr.com/polygon",
-      accounts: ["d5593fe8c33cc12a2a42b86a47d45735b561370602e697e3580085eba8035c17"],
+      accounts: [""],
     },
 
     tbsc: {
       chainId: 97,
       url: "https://endpoints.omniatech.io/v1/bsc/testnet/public",
-      accounts: ["371f72ee8f10a0670393c8049feb8f765b878b5dd5e307c781aedd484b085a85"],
+      accounts: [""],
     }
   }
 };
