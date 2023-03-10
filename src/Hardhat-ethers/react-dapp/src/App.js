@@ -4,7 +4,7 @@ import { ethers } from 'ethers'
 import Erc721 from './artifacts/contracts/erc721.sol/StandardERC721.json'
 
 // Update with the contract address logged out to the CLI when it was deployed
-const erc721Address = "0x5c5B14bee01735a365ded1A2B04C6DF73038caC8"
+const erc721Address = "0xbfB25B471720906ab61Daf43422c91B89719028D"
 
 function App() {
   // store in local state
@@ -59,6 +59,7 @@ function App() {
         const showNFTName = document.getElementById('showNFTName');
         const showSymbol = document.getElementById('showSymbol');
         const totalMint = document.getElementById('totalMint');
+        const allTokensId = document.getElementById('allTokensId');
         if (typeof window.ethereum !== 'undefined') {
             const provider = new ethers.providers.Web3Provider(window.ethereum)
             const contract = new ethers.Contract(erc721Address, Erc721.abi, provider)
@@ -82,6 +83,14 @@ function App() {
                 const totalMints = await contract.totalMinted()
                 totalMint.value = totalMints
                 console.log('symbol: ', totalMints)
+            } catch (err) {
+                console.log("Error: ", err)
+            }
+
+            try {
+                const allTokensIds = await contract.allTokensId()
+                allTokensId.value = allTokensIds
+                console.log('symbol: ', allTokensIds)
             } catch (err) {
                 console.log("Error: ", err)
             }
@@ -245,6 +254,8 @@ function App() {
               <input type="text" id="showSymbol" name="symbol" placeholder="symbol.."/>
               <label htmlFor="totalMint">总铸造量: </label>
               <input type="text" id="totalMint" name="totalmint" placeholder="Total minted.."/>
+              <label htmlFor="allTokensId">全部TokenId: </label>
+              <input type="text" id="allTokensId" name="alltokensid" placeholder="All tokens Id.."/>
 
               <input className="mintNFTButton" type="submit" value="铸造NFT" onClick={safeMint} />
               <label htmlFor="mintToAddress">Mint address: </label>

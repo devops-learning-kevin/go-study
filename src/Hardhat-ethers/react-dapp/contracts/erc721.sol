@@ -675,7 +675,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
         return _myTokenIds[owner];
     }
 
-    function AllTokensId() public view virtual returns (uint256[] memory) {
+    function allTokensId() public view virtual returns (uint256[] memory) {
         return _allTokensId;
     }
 
